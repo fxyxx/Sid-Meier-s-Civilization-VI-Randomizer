@@ -359,7 +359,7 @@ const createClipboardText = () => {
 	new ClipboardJS('.copy');
 	return document.querySelector('.copy').addEventListener('click', () => {
 		const notif = document.querySelector('.copied-text-notif')
-		notif.innerHTML = 'civilizations has been copied'
+		notif.innerHTML = 'civilizations have been copied'
 		notif.style.display = "block";
 		setTimeout(() => notif.style.display = "none", 2800)
 	});
