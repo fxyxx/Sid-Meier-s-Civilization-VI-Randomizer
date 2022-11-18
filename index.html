@@ -1,782 +1,1066 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+		<link rel="stylesheet" href="./styles/to-top-btn.css" />
+    <script type="module" src="./js/app.js" defer></script>
+    <script src="./js/to-top-btn.js" defer></script>
+    <script src="./js/clipboard.min.js" defer></script>
+    <title>Sid Meier's Civilization VI Randomizer</title>
+  </head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="./styles/reset.css">
-	<link rel="stylesheet" href="./styles/header.css">
-	<link rel="stylesheet" href="./styles/main.css">
-	<script src="./js/app.js" defer></script>
-	<script src="./js/clipboard.min.js" defer></script>
-	<title>Sid Meier's Civilization VI Randomizer</title>
-</head>
+  <body>
+    <header class="navbar">
+      <a
+        class="donate-button"
+        target="_blank"
+        href="https://www.paypal.com/donate/?hosted_button_id=SSK2HJY7Q4XKE"
+        >Donate</a
+      >
+      <div class="navbar-header__tittle">
+        <h1>Sid Meier's Civilization <span>VI</span> randomizer</h1>
+      </div>
+      <div class="navbar__lang-button">
+        <p>EN</p>
+        <ul>
+          <li><a href="./pages/ua.html">UA</a></li>
+          <li><a href="./pages/ru.html">RU</a></li>
+        </ul>
+      </div>
+    </header>
+    <main class="main-content">
+      <section class="main-content__user-qty">
+        <div class="main-content__user-qty__label">General settings</div>
+        <div class="main-content__user-qty__actual-data-container">
+          <div class="actual-data">
+            <p>Current number of players</p>
+            <input
+              id="input-players"
+              type="number"
+              min="1"
+              max="12"
+              step="1"
+              value="8"
+            />
+          </div>
+          <div class="actual-data">
+            <p>Number of leaders to choose from for each player</p>
+            <input
+              id="input-number-of-leaders"
+              type="number"
+              min="1"
+              step="1"
+              value="3"
+            />
+          </div>
+          <div class="actual-data">
+            <p>Number of excluded leaders</p>
+            <input
+              id="input-excluded-leaders"
+              type="text"
+              value="34"
+              disabled
+            />
+          </div>
+          <div class="actual-data">
+            <p>Number of banned leaders</p>
+            <input id="input-banned-leaders" type="text" value="0" disabled />
+          </div>
+          <div class="actual-data">
+            <p>Total naumber of leaders</p>
+            <input id="input-total-leaders" type="text" value="58" disabled />
+          </div>
+        </div>
+        <div class="main-content__user-qty__presets-container">
+          <h3>Presets</h3>
+          <div class="preset-container">
+            <div id="DUEL-button" class="preset">DUEL</div>
+            <div id="2x2-button" class="preset">2x2</div>
+            <div id="3x3-button" class="preset">3x3</div>
+            <div id="FFA4-button" class="preset">FFA4</div>
+            <div id="FFA6-button" class="preset">FFA6</div>
+            <div id="FFA8-button" class="preset">FFA8</div>
+            <div id="FFA10-button" class="preset">FFA10</div>
+          </div>
+        </div>
+      </section>
 
-<body>
-	<header class="navbar">
-		<a class="donate-button" target="_blank"
-			href="https://www.paypal.com/donate/?hosted_button_id=SSK2HJY7Q4XKE">Donate</a>
-		<div class="navbar-header__tittle">
-			<h1>Sid Meier's Civilization <span>VI</span> randomizer</h1>
-		</div>
-		<div class="navbar__lang-button">
-			<p>EN</p>
-			<ul>
-				<li><a href="./pages/ua.html">UA</a></li>
-				<li><a href="./pages/ru.html">RU</a></li>
-			</ul>
-		</div>
-	</header>
-	<main class="main-content">
-		<section class="main-content__user-qty">
-			<div class="main-content__user-qty__label">General settings</div>
-			<div class="main-content__user-qty__actual-data-container">
-				<div class="actual-data">
-					<p>Current number of players</p>
-					<input id="input-players" type="number" min="1" max="12" step="1" value="8">
-				</div>
-				<div class="actual-data">
-					<p>Number of leaders to choose from for each player</p>
-					<input id="input-number-of-leaders" type="number" min="1" step="1" value="3">
-				</div>
-				<div class="actual-data">
-					<p>Number of excluded leaders</p>
-					<input id="input-excluded-leaders" type="text" value="34" disabled>
-				</div>
-				<div class="actual-data">
-					<p>Number of banned leaders</p>
-					<input id="input-banned-leaders" type="text" value="0" disabled>
-				</div>
-				<div class="actual-data">
-					<p>Total naumber of leaders</p>
-					<input id="input-total-leaders" type="text" value="58" disabled>
-				</div>
-			</div>
-			<div class="main-content__user-qty__presets-container">
-				<h3>Presets</h3>
-				<div class="preset-container">
-					<div id="DUEL-button" class="preset">DUEL</div>
-					<div id="2x2-button" class="preset">2x2</div>
-					<div id="3x3-button" class="preset">3x3</div>
-					<div id="FFA4-button" class="preset">FFA4</div>
-					<div id="FFA6-button" class="preset">FFA6</div>
-					<div id="FFA8-button" class="preset">FFA8</div>
-					<div id="FFA10-button" class="preset">FFA10</div>
-				</div>
-			</div>
-		</section>
-
-		<section class="main-content__ban-nations">
-			<div class="main-content__ban-nations__label">Civilization to be banned</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization" class="civ1">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_001.png" alt="">
-					<p>American</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Teddy_Roosevelt_29.webp" alt="">
-					<p>Teddy Roosevelt</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Teddy_Roosevelt_(Civ6)/Bull_Moose">More
-					information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization" class="civ1">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_001-1.png" alt="">
-					<p>American</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Teddy_Roosevelt_29_29.webp" alt="">
-					<p>Teddy Roosevelt</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Teddy_Roosevelt_(Civ6)/Rough_Rider">More
-					information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_002.png" alt="">
-					<p>Arabian</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Saladin_29.webp" alt="">
-					<p>Saladin</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Saladin_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_003.png" alt="">
-					<p>Australian</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/John_Curtin_29.webp" alt="">
-					<p>John Curtin</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/John_Curtin_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_004.png" alt="">
-					<p>Aztec</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Montezuma_29.webp" alt="">
-					<p>Montezuma</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Montezuma_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_048.png" alt="">
-					<p>Babylonian</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Hammurabi_29.webp" alt="">
-					<p>Hammurabi</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Hammurabi_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_005.png" alt="">
-					<p>Brazilian</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Pedro_II_29.webp" alt="">
-					<p>Pedro II</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Pedro_II_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_006.png" alt="">
-					<p>Byzantine</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Basil_II_29.webp" alt="">
-					<p>Basil II</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Basil_II_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_007.png" alt="">
-					<p>Canadian</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Wilfrid_Laurier_29.webp" alt="">
-					<p>Wilfrid Laurier</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Wilfrid_Laurier_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_008.png" alt="">
-					<p>Chinese</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Qin_Shi_Huang_29.webp" alt="">
-					<p>Qin Shi Huang</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Qin_Shi_Huang_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_008-1.png" alt="">
-					<p>Chinese</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Kublai_Khan_29_29.webp" alt="">
-					<p>Kublai Khan</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Kublai_Khan_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_009.png" alt="">
-					<p>Cree</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Poundmaker_29.webp" alt="">
-					<p>Poundmaker</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Poundmaker_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_010.png" alt="">
-					<p>Dutch</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Wilhelmina_29.webp" alt="">
-					<p>Wilhelmina</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Wilhelmina_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_011.png" alt="">
-					<p>Egyptian</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Cleopatra_29.webp" alt="">
-					<p>Cleopatra</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Cleopatra_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_012.png" alt="">
-					<p>English</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Victoria_29.webp" alt="">
-					<p>Victoria</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Victoria_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_012.png" alt="">
-					<p>English</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Eleanor_of_Aquitaine_29_29.webp" alt="">
-					<p>Eleanor of Aquitaine</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Eleanor_of_Aquitaine_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_013.png" alt="">
-					<p>Ethiopian</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Menelik_II_29.webp" alt="">
-					<p>Menelik II</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Menelik_II_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_014.png" alt="">
-					<p>French</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Catherine_de_Medici_29.webp" alt="">
-					<p>Catherine de Medici</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Catherine_de_Medici_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_014.png" alt="">
-					<p>French</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Catherine_de_Medici_29_29.webp" alt="">
-					<p>Catherine de Medici</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Catherine_de_Medici_(Civ6)/Magnificence">More
-					information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_014.png" alt="">
-					<p>French</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Eleanor_of_Aquitaine_29_29-2.webp" alt="">
-					<p>Eleanor of Aquitaine</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Eleanor_of_Aquitaine_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_015.png" alt="">
-					<p>Gallic</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Ambiorix_29.webp" alt="">
-					<p>Ambiorix</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Ambiorix_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_016.png" alt="">
-					<p>Georgian</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Tamar_29.webp" alt="">
-					<p>Tamar</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Tamar_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_017.png" alt="">
-					<p>German</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Frederick_Barbarossa_29.webp" alt="">
-					<p>Frederick Barbarossa</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Frederick_Barbarossa_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_018.png" alt="">
-					<p>Gran Colombian</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Sim3Fvar_29.webp" alt="">
-					<p>Simón Bolívar</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Sim%C3%B3n_Bol%C3%ADvar_(Civ6)">More
-					information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_019.png" alt="">
-					<p>Greek</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Gorgo_29.webp" alt="">
-					<p>Gorgo</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Gorgo_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_019.png" alt="">
-					<p>Greek</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Pericles_29.webp" alt="">
-					<p>Pericles</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Pericles_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_020.png" alt="">
-					<p>Hungarian</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Matthias_Corvinus_29.webp" alt="">
-					<p>Matthias Corvinus</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Matthias_Corvinus_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_021.png" alt="">
-					<p>Incan</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Pachacuti_29.webp" alt="">
-					<p>Pachacuti</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Pachacuti_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_022.png" alt="">
-					<p>Indian</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Chandragupta_29.webp" alt="">
-					<p>Chandragupta</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Chandragupta_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_022.png" alt="">
-					<p>Indian</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Gandhi_29.webp" alt="">
-					<p>Gandhi</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Gandhi_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_023.png" alt="">
-					<p>Indonesian</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Gitarja_29.webp" alt="">
-					<p>Gitarja</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Gitarja_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_024.png" alt="">
-					<p>Japanese</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Hojo_Tokimune_29.webp" alt="">
-					<p>Hojo Tokimune</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Hojo_Tokimune_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_025.png" alt="">
-					<p>Khmer</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Jayavarman_VII_29.webp" alt="">
-					<p>Jayavarman VII</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Jayavarman_VII_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_026.png" alt="">
-					<p>Kongolese</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Mvemba_a_Nzinga_29.webp" alt="">
-					<p>Mvemba a Nzinga</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Mvemba_a_Nzinga_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_027.png" alt="">
-					<p>Korean</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Seondeok_29.webp" alt="">
-					<p>Seondeok</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Seondeok_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_028.png" alt="">
-					<p>Macedonian</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Alexander_29.webp" alt="">
-					<p>Alexander</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Alexander_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_029.png" alt="">
-					<p>Malian</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Mansa_Musa_29.webp" alt="">
-					<p>Mansa Musa</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Mansa_Musa_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_030.png" alt="">
-					<p>MĀori</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Kupe_29.webp" alt="">
-					<p>Kupe</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Kupe_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_031.png" alt="">
-					<p>Mapuche</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Lautaro_29.webp" alt="">
-					<p>Lautaro</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Lautaro_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_032.png" alt="">
-					<p>Mayan</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Lady_Six_Sky_29.webp" alt="">
-					<p>Lady Six Sky</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Lady_Six_Sky_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_033.png" alt="">
-					<p>Mongolian</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Genghis_Khan_29.webp" alt="">
-					<p>Genghis Khan</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Genghis_Khan_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_033-1.png" alt="">
-					<p>Mongolian</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Kublai_Khan_29_29-2.webp" alt="">
-					<p>Kublai Khan</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Kublai_Khan_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_034.png" alt="">
-					<p>Norwegian</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Harald_Hardrada_29.webp" alt="">
-					<p>Harald Hardrada</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Harald_Hardrada_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_035.png" alt="">
-					<p>Nubian</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Amanitore_29.webp" alt="">
-					<p>Amanitore</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Amanitore_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_036.png" alt="">
-					<p>Ottoman</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Suleiman_29.webp" alt="">
-					<p>Suleiman</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Suleiman_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_037.png" alt="">
-					<p>Persian</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Cyrus_29.webp" alt="">
-					<p>Cyrus</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Cyrus_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_038.png" alt="">
-					<p>Phoenician</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Dido_29.webp" alt="">
-					<p>Dido</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Dido_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_039.png" alt="">
-					<p>Polish</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Jadwiga_29.webp" alt="">
-					<p>Jadwiga</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Jadwiga_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_Portuguese.png" alt="">
-					<p>Portuguese</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Joao_III.webp" alt="">
-					<p>Joāo III</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Jo%C3%A3o_III_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_040.png" alt="">
-					<p>Roman</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Trajan_29.webp" alt="">
-					<p>Trajan</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Trajan_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_041.png" alt="">
-					<p>Russian</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Peter_29.webp" alt="">
-					<p>Peter</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Peter_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_042.png" alt="">
-					<p>Scottish</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Robert_the_Bruce_29.webp" alt="">
-					<p>Robert the Bruce</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Robert_the_Bruce_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_043.png" alt="">
-					<p>Scythian</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Tomyris_29.webp" alt="">
-					<p>Tomyris</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Tomyris_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_044.png" alt="">
-					<p>Spanish</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Philip_II_29.webp" alt="">
-					<p>Philip II</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Philip_II_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_045.png" alt="">
-					<p>Sumerian</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Gilgamesh_29.webp" alt="">
-					<p>Gilgamesh</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Gilgamesh_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_046.png" alt="">
-					<p>Swedish</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Kristina_29.webp" alt="">
-					<p>Kristina</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Kristina_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_Vietnamese_29.png" alt="">
-					<p>Vietnamese</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/B3Fu_29.webp" alt="">
-					<p>Bà TriỆu</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/B%C3%A0_Tri%E1%BB%87u_(Civ6)">More information</a>
-			</div>
-			<div class="main-content__ban-nations__counties">
-				<input type="checkbox" name="" id="checkboxCivilization">
-				<div class="container1">
-					<img src="./images/civ_icons/image_part_047.png" alt="">
-					<p>Zulu</p>
-				</div>
-				<div class="container2">
-					<img src="./images/leaders_icons/Shaka_29.webp" alt="">
-					<p>Shaka</p>
-				</div>
-				<a target="_blank" href="https://civilization.fandom.com/wiki/Shaka_(Civ6)">More information</a>
-			</div>
-			<button class="submit" type="submit">draft your game</button>
-			<div class="results">
-				<div class="template-begin-container"></div>
-				<div class="template-container"></div>
-			</div>
-		</section>
-		<div class="copied-text-notif"></div>
-	</main>
-</body>
-
+      <section class="main-content__ban-nations">
+        <div class="main-content__ban-nations__label">
+          Civilization to be banned
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input
+            type="checkbox"
+            name=""
+            id="checkboxCivilization"
+            class="civ1"
+          />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_001.png" alt="" />
+            <p>American</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Teddy_Roosevelt_29.webp" alt="" />
+            <p>Teddy Roosevelt</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Teddy_Roosevelt_(Civ6)/Bull_Moose"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input
+            type="checkbox"
+            name=""
+            id="checkboxCivilization"
+            class="civ1"
+          />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_001-1.png" alt="" />
+            <p>American</p>
+          </div>
+          <div class="container2">
+            <img
+              src="./images/leaders_icons/Teddy_Roosevelt_29_29.webp"
+              alt=""
+            />
+            <p>Teddy Roosevelt</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Teddy_Roosevelt_(Civ6)/Rough_Rider"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_002.png" alt="" />
+            <p>Arabian</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Saladin_29.webp" alt="" />
+            <p>Saladin</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Saladin_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_003.png" alt="" />
+            <p>Australian</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/John_Curtin_29.webp" alt="" />
+            <p>John Curtin</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/John_Curtin_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_004.png" alt="" />
+            <p>Aztec</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Montezuma_29.webp" alt="" />
+            <p>Montezuma</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Montezuma_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_048.png" alt="" />
+            <p>Babylonian</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Hammurabi_29.webp" alt="" />
+            <p>Hammurabi</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Hammurabi_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_005.png" alt="" />
+            <p>Brazilian</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Pedro_II_29.webp" alt="" />
+            <p>Pedro II</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Pedro_II_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_006.png" alt="" />
+            <p>Byzantine</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Basil_II_29.webp" alt="" />
+            <p>Basil II</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Basil_II_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_007.png" alt="" />
+            <p>Canadian</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Wilfrid_Laurier_29.webp" alt="" />
+            <p>Wilfrid Laurier</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Wilfrid_Laurier_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_008.png" alt="" />
+            <p>Chinese</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Qin_Shi_Huang_29.webp" alt="" />
+            <p>Qin Shi Huang</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Qin_Shi_Huang_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_008-1.png" alt="" />
+            <p>Chinese</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Kublai_Khan_29_29.webp" alt="" />
+            <p>Kublai Khan</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Kublai_Khan_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_009.png" alt="" />
+            <p>Cree</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Poundmaker_29.webp" alt="" />
+            <p>Poundmaker</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Poundmaker_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_010.png" alt="" />
+            <p>Dutch</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Wilhelmina_29.webp" alt="" />
+            <p>Wilhelmina</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Wilhelmina_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_011.png" alt="" />
+            <p>Egyptian</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Cleopatra_29.webp" alt="" />
+            <p>Cleopatra</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Cleopatra_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_012.png" alt="" />
+            <p>English</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Victoria_29.webp" alt="" />
+            <p>Victoria</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Victoria_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_012.png" alt="" />
+            <p>English</p>
+          </div>
+          <div class="container2">
+            <img
+              src="./images/leaders_icons/Eleanor_of_Aquitaine_29_29.webp"
+              alt=""
+            />
+            <p>Eleanor of Aquitaine</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Eleanor_of_Aquitaine_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_013.png" alt="" />
+            <p>Ethiopian</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Menelik_II_29.webp" alt="" />
+            <p>Menelik II</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Menelik_II_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_014.png" alt="" />
+            <p>French</p>
+          </div>
+          <div class="container2">
+            <img
+              src="./images/leaders_icons/Catherine_de_Medici_29.webp"
+              alt=""
+            />
+            <p>Catherine de Medici</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Catherine_de_Medici_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_014.png" alt="" />
+            <p>French</p>
+          </div>
+          <div class="container2">
+            <img
+              src="./images/leaders_icons/Catherine_de_Medici_29_29.webp"
+              alt=""
+            />
+            <p>Catherine de Medici</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Catherine_de_Medici_(Civ6)/Magnificence"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_014.png" alt="" />
+            <p>French</p>
+          </div>
+          <div class="container2">
+            <img
+              src="./images/leaders_icons/Eleanor_of_Aquitaine_29_29-2.webp"
+              alt=""
+            />
+            <p>Eleanor of Aquitaine</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Eleanor_of_Aquitaine_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_015.png" alt="" />
+            <p>Gallic</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Ambiorix_29.webp" alt="" />
+            <p>Ambiorix</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Ambiorix_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_016.png" alt="" />
+            <p>Georgian</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Tamar_29.webp" alt="" />
+            <p>Tamar</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Tamar_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_017.png" alt="" />
+            <p>German</p>
+          </div>
+          <div class="container2">
+            <img
+              src="./images/leaders_icons/Frederick_Barbarossa_29.webp"
+              alt=""
+            />
+            <p>Frederick Barbarossa</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Frederick_Barbarossa_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_018.png" alt="" />
+            <p>Gran Colombian</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Sim3Fvar_29.webp" alt="" />
+            <p>Simón Bolívar</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Sim%C3%B3n_Bol%C3%ADvar_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_019.png" alt="" />
+            <p>Greek</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Gorgo_29.webp" alt="" />
+            <p>Gorgo</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Gorgo_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_019.png" alt="" />
+            <p>Greek</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Pericles_29.webp" alt="" />
+            <p>Pericles</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Pericles_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_020.png" alt="" />
+            <p>Hungarian</p>
+          </div>
+          <div class="container2">
+            <img
+              src="./images/leaders_icons/Matthias_Corvinus_29.webp"
+              alt=""
+            />
+            <p>Matthias Corvinus</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Matthias_Corvinus_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_021.png" alt="" />
+            <p>Incan</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Pachacuti_29.webp" alt="" />
+            <p>Pachacuti</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Pachacuti_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_022.png" alt="" />
+            <p>Indian</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Chandragupta_29.webp" alt="" />
+            <p>Chandragupta</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Chandragupta_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_022.png" alt="" />
+            <p>Indian</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Gandhi_29.webp" alt="" />
+            <p>Gandhi</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Gandhi_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_023.png" alt="" />
+            <p>Indonesian</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Gitarja_29.webp" alt="" />
+            <p>Gitarja</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Gitarja_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_024.png" alt="" />
+            <p>Japanese</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Hojo_Tokimune_29.webp" alt="" />
+            <p>Hojo Tokimune</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Hojo_Tokimune_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_025.png" alt="" />
+            <p>Khmer</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Jayavarman_VII_29.webp" alt="" />
+            <p>Jayavarman VII</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Jayavarman_VII_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_026.png" alt="" />
+            <p>Kongolese</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Mvemba_a_Nzinga_29.webp" alt="" />
+            <p>Mvemba a Nzinga</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Mvemba_a_Nzinga_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_027.png" alt="" />
+            <p>Korean</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Seondeok_29.webp" alt="" />
+            <p>Seondeok</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Seondeok_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_028.png" alt="" />
+            <p>Macedonian</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Alexander_29.webp" alt="" />
+            <p>Alexander</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Alexander_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_029.png" alt="" />
+            <p>Malian</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Mansa_Musa_29.webp" alt="" />
+            <p>Mansa Musa</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Mansa_Musa_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_030.png" alt="" />
+            <p>MĀori</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Kupe_29.webp" alt="" />
+            <p>Kupe</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Kupe_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_031.png" alt="" />
+            <p>Mapuche</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Lautaro_29.webp" alt="" />
+            <p>Lautaro</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Lautaro_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_032.png" alt="" />
+            <p>Mayan</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Lady_Six_Sky_29.webp" alt="" />
+            <p>Lady Six Sky</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Lady_Six_Sky_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_033.png" alt="" />
+            <p>Mongolian</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Genghis_Khan_29.webp" alt="" />
+            <p>Genghis Khan</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Genghis_Khan_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_033-1.png" alt="" />
+            <p>Mongolian</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Kublai_Khan_29_29-2.webp" alt="" />
+            <p>Kublai Khan</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Kublai_Khan_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_034.png" alt="" />
+            <p>Norwegian</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Harald_Hardrada_29.webp" alt="" />
+            <p>Harald Hardrada</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Harald_Hardrada_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_035.png" alt="" />
+            <p>Nubian</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Amanitore_29.webp" alt="" />
+            <p>Amanitore</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Amanitore_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_036.png" alt="" />
+            <p>Ottoman</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Suleiman_29.webp" alt="" />
+            <p>Suleiman</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Suleiman_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_037.png" alt="" />
+            <p>Persian</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Cyrus_29.webp" alt="" />
+            <p>Cyrus</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Cyrus_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_038.png" alt="" />
+            <p>Phoenician</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Dido_29.webp" alt="" />
+            <p>Dido</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Dido_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_039.png" alt="" />
+            <p>Polish</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Jadwiga_29.webp" alt="" />
+            <p>Jadwiga</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Jadwiga_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_Portuguese.png" alt="" />
+            <p>Portuguese</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Joao_III.webp" alt="" />
+            <p>Joāo III</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Jo%C3%A3o_III_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_040.png" alt="" />
+            <p>Roman</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Trajan_29.webp" alt="" />
+            <p>Trajan</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Trajan_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_041.png" alt="" />
+            <p>Russian</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Peter_29.webp" alt="" />
+            <p>Peter</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Peter_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_042.png" alt="" />
+            <p>Scottish</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Robert_the_Bruce_29.webp" alt="" />
+            <p>Robert the Bruce</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Robert_the_Bruce_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_043.png" alt="" />
+            <p>Scythian</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Tomyris_29.webp" alt="" />
+            <p>Tomyris</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Tomyris_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_044.png" alt="" />
+            <p>Spanish</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Philip_II_29.webp" alt="" />
+            <p>Philip II</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Philip_II_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_045.png" alt="" />
+            <p>Sumerian</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Gilgamesh_29.webp" alt="" />
+            <p>Gilgamesh</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Gilgamesh_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_046.png" alt="" />
+            <p>Swedish</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Kristina_29.webp" alt="" />
+            <p>Kristina</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Kristina_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_Vietnamese_29.png" alt="" />
+            <p>Vietnamese</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/B3Fu_29.webp" alt="" />
+            <p>Bà TriỆu</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/B%C3%A0_Tri%E1%BB%87u_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="main-content__ban-nations__counties">
+          <input type="checkbox" name="" id="checkboxCivilization" />
+          <div class="container1">
+            <img src="./images/civ_icons/image_part_047.png" alt="" />
+            <p>Zulu</p>
+          </div>
+          <div class="container2">
+            <img src="./images/leaders_icons/Shaka_29.webp" alt="" />
+            <p>Shaka</p>
+          </div>
+          <a
+            target="_blank"
+            href="https://civilization.fandom.com/wiki/Shaka_(Civ6)"
+            >More information</a
+          >
+        </div>
+        <div class="to-up"><img src="./images/up-arrow.svg" alt="to-top"></div>
+        <button class="submit" type="submit">draft your game</button>
+        <div class="results">
+          <div class="template-begin-container"></div>
+          <div class="template-container"></div>
+        </div>
+      </section>
+      <div class="copied-text-notif"></div>
+    </main>
+  </body>
 </html>

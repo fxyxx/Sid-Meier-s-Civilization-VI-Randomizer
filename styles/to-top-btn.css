@@ -1,0 +1,18 @@
+.to-up {
+  position: fixed;
+  bottom: 2vmax;
+  right: 0.7vmax;
+  display: none;
+  z-index: 22;
+  cursor: pointer;
+  height: 3.5vmax;
+  width: 3.5vmax;
+  background-color: #e6bd64;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+
+.to-up:hover {
+  background-color: #e6bd64;
+  border-radius: 30%;
+}

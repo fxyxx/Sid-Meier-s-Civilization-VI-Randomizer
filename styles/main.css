@@ -202,7 +202,7 @@
 	height: 3vmax;
 	background-color: var(--dark_blue);
 	color: #dfdadd;
-	text-shadow: 0 0 .4vmax #000;
+	text-shadow: 0 0 .2vmax #000;
 	margin: 1vmax;
 	font-family: PenumbraSemiBold_c, sans-serif;
 	font-size: calc(var(--index) * 1);
@@ -225,7 +225,7 @@
 	height: 3vmax;
 	background-color: var(--dark_blue);
 	color: #dfdadd;
-	text-shadow: 0 0 .4vmax #000;
+	text-shadow: 0 0 .2vmax #000;
 	border-radius: 3vmax;
 	font-family: Penumbra_c, sans-serif;
 	font-size: calc(var(--index) / 1.5);
@@ -237,6 +237,26 @@
 	background-color: var(--dark_beige);
 	color: #000;
 	text-shadow: 0 0 .1vmax #000;
+}
+
+.reset-page {
+	width: 20vmax;
+	height: 3vmax;
+	background-color: var(--dark_blue);
+	color: #dfdadd;
+	text-shadow: 0 0 .2vmax #000;
+	border-radius: 3vmax;
+	font-family: Penumbra_c, sans-serif;
+	font-size: calc(var(--index) / 1.5);
+	letter-spacing: .09vmax;
+	transition: .2s;
+	margin: 1vmax;
+}
+
+.reset-page:hover {
+	background-color: var(--dark_beige);
+	color: #000;
+	text-shadow: 0 0 .1vmax #000;	
 }
 
 .results {

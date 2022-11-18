@@ -1,0 +1,292 @@
+[
+  {
+    "civilization": "American",
+    "leader": "Teddy Roosevelt (Bull Moose)",
+    "isBanned": false
+  },
+  {
+    "civilization": "American",
+    "leader": "Teddy Roosevelt (Rough Rider)",
+    "isBanned": false
+  },
+  {
+    "civilization": "Arabian",
+    "leader": "Saladin",
+    "isBanned": false
+  },
+  {
+    "civilization": "Australian",
+    "leader": "John Curtin",
+    "isBanned": false
+  },
+  {
+    "civilization": "Aztec",
+    "leader": "Montezuma",
+    "isBanned": false
+  },
+  {
+    "civilization": "Babylonian",
+    "leader": "Hammurabi",
+    "isBanned": false
+  },
+  {
+    "civilization": "Brazilian",
+    "leader": "Pedro II",
+    "isBanned": false
+  },
+  {
+    "civilization": "Byzantine",
+    "leader": "Basil II",
+    "isBanned": false
+  },
+  {
+    "civilization": "Canadian",
+    "leader": "Wilfrid Laurier",
+    "isBanned": false
+  },
+  {
+    "civilization": "Chinese",
+    "leader": "Qin Shi Huang",
+    "isBanned": false
+  },
+  {
+    "civilization": "Chinese",
+    "leader": "Kublai Khan_cn",
+    "isBanned": false
+  },
+  {
+    "civilization": "Cree",
+    "leader": "Poundmaker",
+    "isBanned": false
+  },
+  {
+    "civilization": "Dutch",
+    "leader": "Wilhelmina",
+    "isBanned": false
+  },
+  {
+    "civilization": "Egyptian",
+    "leader": "Cleopatra",
+    "isBanned": false
+  },
+  {
+    "civilization": "English",
+    "leader": "Victoria",
+    "isBanned": false
+  },
+  {
+    "civilization": "English",
+    "leader": "Eleanor of Aquitaine_uk",
+    "isBanned": false
+  },
+  {
+    "civilization": "Ethiopian",
+    "leader": "Menelik II",
+    "isBanned": false
+  },
+  {
+    "civilization": "French",
+    "leader": "Catherine de Medici (Black Queen)",
+    "isBanned": false
+  },
+  {
+    "civilization": "French",
+    "leader": "Catherine de Medici (Magnificence)",
+    "isBanned": false
+  },
+  {
+    "civilization": "French",
+    "leader": "Eleanor of Aquitaine_fr",
+    "isBanned": false
+  },
+  {
+    "civilization": "Gallic",
+    "leader": "Ambiorix",
+    "isBanned": false
+  },
+  {
+    "civilization": "Georgian",
+    "leader": "Tamar",
+    "isBanned": false
+  },
+  {
+    "civilization": "German",
+    "leader": "Frederick Barbarossa",
+    "isBanned": false
+  },
+  {
+    "civilization": "Gran Colombian",
+    "leader": "Simón Bolívar",
+    "isBanned": false
+  },
+  {
+    "civilization": "Greek",
+    "leader": "Gorgo",
+    "isBanned": false
+  },
+  {
+    "civilization": "Greek",
+    "leader": "Pericles",
+    "isBanned": false
+  },
+  {
+    "civilization": "Hungarian",
+    "leader": "Matthias Corvinus",
+    "isBanned": false
+  },
+  {
+    "civilization": "Incan",
+    "leader": "Pachacuti",
+    "isBanned": false
+  },
+  {
+    "civilization": "Indian",
+    "leader": "Chandragupta",
+    "isBanned": false
+  },
+  {
+    "civilization": "Indian",
+    "leader": "Gandhi",
+    "isBanned": false
+  },
+  {
+    "civilization": "Indonesian",
+    "leader": "Gitarja",
+    "isBanned": false
+  },
+  {
+    "civilization": "Japanese",
+    "leader": "Hojo Tokimune",
+    "isBanned": false
+  },
+  {
+    "civilization": "Khmer",
+    "leader": "Jayavarman VII",
+    "isBanned": false
+  },
+  {
+    "civilization": "Kongolese",
+    "leader": "Mvemba a Nzinga",
+    "isBanned": false
+  },
+  {
+    "civilization": "Korean",
+    "leader": "Seondeok",
+    "isBanned": false
+  },
+  {
+    "civilization": "Macedonian",
+    "leader": "Alexander",
+    "isBanned": false
+  },
+  {
+    "civilization": "Malian",
+    "leader": "Mansa Musa",
+    "isBanned": false
+  },
+  {
+    "civilization": "Māori",
+    "leader": "Kupe",
+    "isBanned": false
+  },
+  {
+    "civilization": "Mapuche",
+    "leader": "Lautaro",
+    "isBanned": false
+  },
+  {
+    "civilization": "Mayan",
+    "leader": "Lady Six Sky",
+    "isBanned": false
+  },
+  {
+    "civilization": "Mongolian",
+    "leader": "Genghis Khan",
+    "isBanned": false
+  },
+  {
+    "civilization": "Mongolian",
+    "leader": "Kublai Khan_mn",
+    "isBanned": false
+  },
+  {
+    "civilization": "Norwegian",
+    "leader": "Harald Hardrada",
+    "isBanned": false
+  },
+  {
+    "civilization": "Nubian",
+    "leader": "Amanitore",
+    "isBanned": false
+  },
+  {
+    "civilization": "Ottoman",
+    "leader": "Suleiman",
+    "isBanned": false
+  },
+  {
+    "civilization": "Persian",
+    "leader": "Cyrus",
+    "isBanned": false
+  },
+  {
+    "civilization": "Phoenician",
+    "leader": "Dido",
+    "isBanned": false
+  },
+  {
+    "civilization": "Polish",
+    "leader": "Jadwiga",
+    "isBanned": false
+  },
+  {
+    "civilization": "Portuguese",
+    "leader": "Joāo III",
+    "isBanned": false
+  },
+  {
+    "civilization": "Roman",
+    "leader": "Trajan",
+    "isBanned": false
+  },
+  {
+    "civilization": "Russian",
+    "leader": "Peter",
+    "isBanned": false
+  },
+  {
+    "civilization": "Scottish",
+    "leader": "Robert the Bruce",
+    "isBanned": false
+  },
+  {
+    "civilization": "Scythian",
+    "leader": "Tomyris",
+    "isBanned": false
+  },
+  {
+    "civilization": "Spanish",
+    "leader": "Philip II",
+    "isBanned": false
+  },
+  {
+    "civilization": "Sumerian",
+    "leader": "Gilgamesh",
+    "isBanned": false
+  },
+  {
+    "civilization": "Swedish",
+    "leader": "Kristina",
+    "isBanned": false
+  },
+  {
+    "civilization": "Vietnamese",
+    "leader": "Bà TriỆu",
+    "isBanned": false
+  },
+  {
+    "civilization": "Zulu",
+    "leader": "Shaka",
+    "isBanned": false
+  }
+]
