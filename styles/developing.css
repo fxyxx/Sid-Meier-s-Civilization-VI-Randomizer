@@ -1,29 +1,29 @@
 @font-face {
-	font-family: PenumbraSemiBold_c;
-	src: url(/fonts/Penumbra-HalfSerif-Std-Semibold_35113.ttf);
+  font-family: PenumbraSemiBold_c;
+  src: url(/fonts/Penumbra-HalfSerif-Std-Semibold_35113.ttf);
 }
 
 .develop {
-	display: flex;
-	justify-items: center;
-	align-items: center;
-	flex-direction: column;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 h1 {
-	margin: 15vmax auto 1vmax auto;
-	font-family: PenumbraSemiBold_c, sans-serif;
-	font-size: 2vmax;
+  margin: 15vmax auto 1vmax auto;
+  font-family: PenumbraSemiBold_c, sans-serif;
+  font-size: 2vmax;
 }
 
 button {
-	border: .1vmax solid black;
-	border-radius: .8vmax;
-	padding: .5vmax;
-	transition: .3s;
+  border: 0.1vmax solid black;
+  border-radius: 0.8vmax;
+  padding: 0.5vmax;
+  transition: 0.3s;
 }
 
 button:hover {
-	background-color: #0e3251;
-	color: #fff
+  background-color: #0e3251;
+  color: #fff;
 }
