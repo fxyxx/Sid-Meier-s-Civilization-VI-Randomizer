@@ -1,0 +1,17 @@
+.myBtn {
+  width: 120px;
+  height: 60px;
+  cursor: pointer;
+
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 20px;
+  transition: 0.2s;
+  border: 1px solid var(--color-black);
+  border-radius: 7px;
+
+  &:hover {
+    background-color: var(--color-dark-blue);
+    color: var(--color-label);
+  }
+}

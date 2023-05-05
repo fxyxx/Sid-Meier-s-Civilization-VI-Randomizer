@@ -1,0 +1,25 @@
+.mySelect {
+  width: 100vw;
+  min-width: 15ch;
+  max-width: 30ch;
+  border: 1px solid var(--color-black);
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  font-size: 1.25rem;
+  cursor: pointer;
+  line-height: 1.1;
+  background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+  font-family: var(--font-family);
+  font-weight: 600;
+
+  option {
+    background-color: var(--color-dark-blue);
+    color: var(--color-label);
+    text-align: center;
+    font-weight: 700;
+
+    &:first-child {
+      color: var(--color-dark-beige);
+    }
+  }
+}

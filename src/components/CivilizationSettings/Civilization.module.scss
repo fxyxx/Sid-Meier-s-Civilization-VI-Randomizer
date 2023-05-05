@@ -1,0 +1,122 @@
+.civilization {
+  display: flex;
+  align-items: center;
+  width: 500px;
+  height: 55px;
+  border: 1px solid var(--color-black);
+  border-radius: 7px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: var(--color-dark-blue);
+    color: var(--color-label);
+    scale: 1.07;
+    z-index: 2;
+  }
+}
+
+.banned {
+  @extend .civilization;
+
+  &:hover {
+    background-color: #81221f;
+    z-index: 2;
+  }
+
+  background-color: #81221f;
+}
+
+.banArea {
+  display: flex;
+  flex-basis: 76%;
+  cursor: pointer;
+  position: relative;
+
+  &:hover {
+    border-radius: 25%;
+  }
+
+  &:hover .civilizationStyles,
+  &:hover .leaderStyles {
+    filter: blur(1.3px);
+  }
+
+  &:hover .banBtn {
+    display: block;
+    z-index: 1;
+  }
+}
+
+.banBtn {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  width: 150px;
+  height: 85%;
+  cursor: pointer;
+
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 20px;
+  transition: 0.2s;
+  border: 1px solid var(--color-black);
+  border-radius: 7px;
+
+  &:hover {
+    background-color: var(--color-label);
+  }
+  &:active {
+    background-color: var(--color-white);
+  }
+  &:disabled {
+    background-color: #8b8b8be7;
+  }
+}
+
+img {
+  width: 50px;
+  z-index: 1;
+  border-radius: 50%;
+}
+
+.civilizationStyles {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-basis: 45%;
+  gap: 5px;
+  margin-left: 5px;
+}
+
+.leaderStyles {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-basis: 60%;
+  gap: 5px;
+}
+
+.link {
+  flex-basis: 10%;
+  background-color: var(--color-dark-blue);
+  border-radius: 7px;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 17px;
+  color: var(--color-label);
+  transition: 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-light-beige);
+    color: var(--color-black);
+    border: 1px solid var(--color-black);
+    scale: 1.07;
+  }
+}

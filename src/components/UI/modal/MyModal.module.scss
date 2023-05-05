@@ -1,0 +1,14 @@
+.myModal {
+  position: fixed;
+  bottom: 15%;
+  left: 50%;
+  color: var(--color-label);
+  padding: 10px;
+  z-index: 2;
+  transform: translate(-50%, 50%);
+  background-color: #81221f;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  border-radius: 15px;
+}

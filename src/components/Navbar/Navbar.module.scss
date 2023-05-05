@@ -1,0 +1,21 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 75px;
+  background-color: var(--color-dark-blue);
+  border-bottom: 0.4vmax groove #6c5644;
+}
+
+.navbar_content {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--color-label);
+  text-shadow: 0 0 0.4vmax var(--color-black);
+
+  span {
+    color: var(--color-dark-beige);
+  }
+}

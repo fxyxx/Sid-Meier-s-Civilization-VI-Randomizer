@@ -1,0 +1,13 @@
+.draftedGame {
+  display: flex;
+  flex-flow: column;
+  gap: 15px;
+  background-color: var(--color-light-beige);
+  height: 100%;
+  margin: 15px 40px;
+  padding: 5px 0;
+  border-width: 8px 3.5px;
+  border-style: double dashed double;
+  border-radius: 15px;
+}
+

@@ -1,0 +1,39 @@
+.paragraph {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 36px;
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 7px;
+  padding: 5px 10px;
+
+  span {
+    color: var(--color-label);
+    background-color: var(--color-dark-blue);
+    width: 150px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+  }
+}
+
+.flash {
+  animation-name: flash;
+  animation-duration: 500ms;
+}
+
+@keyframes flash {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.5;
+  }
+}

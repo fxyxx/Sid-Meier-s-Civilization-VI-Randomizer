@@ -1,0 +1,12 @@
+.civilizationSettings {
+  background-color: var(--color-light-beige);
+  height: 100%;
+  margin: 15px 40px;
+  border-width: 8px 3.5px;
+  border-style: double dashed double;
+  border-radius: 15px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
