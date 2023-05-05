@@ -76,6 +76,7 @@ Civilization.propTypes = {
   civilizationWiki: PropTypes.string.isRequired,
   isBanned: PropTypes.bool.isRequired,
   setIsBannedCount: PropTypes.func.isRequired,
+  isBannedCount: PropTypes.number.isRequired,
 }
 
 export default Civilization

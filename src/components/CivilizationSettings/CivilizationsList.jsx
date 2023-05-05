@@ -32,6 +32,7 @@ CivilizationsList.propTypes = {
   leadersLeft: PropTypes.number.isRequired,
   civilizationsDATA: PropTypes.array.isRequired,
   setIsBannedCount: PropTypes.func.isRequired,
+  isBannedCount: PropTypes.number.isRequired,
 }
 
 export default CivilizationsList
