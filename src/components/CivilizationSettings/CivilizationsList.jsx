@@ -6,6 +6,7 @@ const CivilizationsList = ({
   leadersLeft,
   civilizationsDATA,
   setIsBannedCount,
+  isBannedCount,
 }) => {
   return (
     <div className={styles.civilizationsList}>
@@ -20,6 +21,7 @@ const CivilizationsList = ({
           civilizationImg={civilization.civilizationImg}
           leaderImg={civilization.leaderImg}
           civilizationWiki={civilization.civilizationWiki}
+          isBannedCount={isBannedCount}
         />
       ))}
     </div>

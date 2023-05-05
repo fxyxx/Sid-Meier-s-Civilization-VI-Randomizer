@@ -7,6 +7,8 @@ import { useEffect, useState } from 'react'
 import { bannedCounter, generateRandomIndexArray } from './utils/calculations'
 import DraftedGame from './components/DraftedGame/DraftedGame'
 
+//todo пофиксить стейты в обновлении селектов
+
 function App() {
   const [players, setPlayers] = useState('')
   const [leaders, setLeaders] = useState('')
@@ -91,6 +93,7 @@ function App() {
         setIsBannedCount={changeIsBanned}
         generateGame={generateGame}
         generateBtnStatus={generateBtnStatus}
+        isBannedCount={isBannedCount}
       />
       {filteredDATA.length && (
         <DraftedGame

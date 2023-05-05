@@ -11,19 +11,18 @@ const CivilizationSettings = ({
   generateGame,
   generateBtnStatus,
   leadersLeft,
+  isBannedCount,
 }) => {
-  // console.log(!players || !leaders ? true : !leadersLeft ? true : false)
-
   return (
     <div className={styles.civilizationSettings}>
       <CivilizationsList
         leadersLeft={leadersLeft}
         civilizationsDATA={civilizationsDATA}
         setIsBannedCount={setIsBannedCount}
+        isBannedCount={isBannedCount}
       />
       <MyActionButton
         disabled={!players || !leaders ? true : leadersLeft < 0 ? true : false}
-        // disabled={!players || !leaders ? true : !leadersLeft ? true : false}
         onClick={generateGame}
       >
         {generateBtnStatus}
