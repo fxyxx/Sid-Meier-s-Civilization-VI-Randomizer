@@ -11,7 +11,6 @@ const CivilizationSettings = ({
   generateGame,
   generateBtnStatus,
   leadersLeft,
-  isBannedCount,
 }) => {
   return (
     <div className={styles.civilizationSettings}>
@@ -19,7 +18,6 @@ const CivilizationSettings = ({
         leadersLeft={leadersLeft}
         civilizationsDATA={civilizationsDATA}
         setIsBannedCount={setIsBannedCount}
-        isBannedCount={isBannedCount}
       />
       <MyActionButton
         disabled={!players || !leaders ? true : leadersLeft < 0 ? true : false}
@@ -39,7 +37,6 @@ CivilizationSettings.propTypes = {
   setIsBannedCount: PropTypes.func.isRequired,
   generateGame: PropTypes.func.isRequired,
   generateBtnStatus: PropTypes.string.isRequired,
-  isBannedCount: PropTypes.number.isRequired,
 }
 
 export default CivilizationSettings

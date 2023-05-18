@@ -14,4 +14,10 @@
     background-color: var(--color-dark-blue);
     color: var(--color-label);
   }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: #cccccc;
+    color: #666666;
+  }
 }

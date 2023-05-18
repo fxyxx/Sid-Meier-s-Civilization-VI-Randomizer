@@ -17,7 +17,8 @@ const DraftSettings = ({
   setLeadersLeft,
 }) => {
   const [isSecondSelectEnabled, setIsSecondSelectEnabled] = useState(false)
-  const leadersOptions = civilizationsDATA.length / +players
+  const playersOptions = civilizationsDATA.length - isBannedCount
+  const leadersOptions = (civilizationsDATA.length - isBannedCount) / +players
 
   const handleFirstSelectChange = (value) => {
     setPlayers(value)
@@ -35,27 +36,21 @@ const DraftSettings = ({
   }
 
   useEffect(() => {
-    setLeadersLeft(
-      leadersLeft >= 0
-        ? civilizationsDATA.length - +players * +leaders - isBannedCount
-        : civilizationsDATA.length - +players * 1 - isBannedCount
-    )
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [
-    players,
-    leaders,
-    isBannedCount,
-    civilizationsDATA.length,
-    setLeadersLeft,
-  ])
-
-  useEffect(() => {
-    if (leadersLeft < 0) {
-      setLeaders('1')
-      console.log('qwe')
+    if (leadersLeft >= 0) {
+      setLeadersLeft(
+        leadersLeft >= 0
+          ? civilizationsDATA.length - +players * +leaders - isBannedCount
+          : civilizationsDATA.length - +players * 1 - isBannedCount
+      )
     }
+
+    if (civilizationsDATA.length - (+players * +leaders - isBannedCount) < 0) {
+      setLeaders('1')
+      setLeadersLeft(civilizationsDATA.length - +players * 1 - isBannedCount)
+    }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [leadersLeft])
+  }, [players, leaders, isBannedCount])
 
   return (
     <div className={styles.draftSettings}>
@@ -72,14 +67,14 @@ const DraftSettings = ({
           value={players}
           onChange={(value) => handleFirstSelectChange(value)}
           defaultValue="NUMBER OF PLAYERS"
-          options={getOptionQuantity(12)}
+          options={getOptionQuantity(playersOptions > 12 ? 12 : playersOptions)}
         />
         <MySelect
           value={leaders}
           onChange={(value) => handleSecondSelectChange(value)}
           defaultValue="NUMBER OF LEADERS"
           options={getOptionQuantity(
-            isFinite(leadersOptions) ? Math.floor(leadersOptions) : 0
+            isFinite(leadersOptions) ? Math.floor(leadersOptions) : 1
           )}
           disabled={!isSecondSelectEnabled}
         />
@@ -110,7 +105,7 @@ const DraftSettings = ({
           >
             Presets
           </h2>
-          <ButtonsList setPresets={setPresets} />
+          <ButtonsList leadersLeft={leadersLeft} setPresets={setPresets} />
         </div>
       </div>
     </div>

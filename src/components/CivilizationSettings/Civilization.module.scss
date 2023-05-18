@@ -74,7 +74,9 @@
     background-color: var(--color-white);
   }
   &:disabled {
-    background-color: #8b8b8be7;
+    cursor: not-allowed;
+    background-color: #cccccc;
+    color: #666666;
   }
 }
 

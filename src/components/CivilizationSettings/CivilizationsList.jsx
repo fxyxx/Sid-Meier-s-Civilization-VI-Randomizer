@@ -6,7 +6,6 @@ const CivilizationsList = ({
   leadersLeft,
   civilizationsDATA,
   setIsBannedCount,
-  isBannedCount,
 }) => {
   return (
     <div className={styles.civilizationsList}>
@@ -21,7 +20,6 @@ const CivilizationsList = ({
           civilizationImg={civilization.civilizationImg}
           leaderImg={civilization.leaderImg}
           civilizationWiki={civilization.civilizationWiki}
-          isBannedCount={isBannedCount}
         />
       ))}
     </div>
@@ -32,7 +30,6 @@ CivilizationsList.propTypes = {
   leadersLeft: PropTypes.number.isRequired,
   civilizationsDATA: PropTypes.array.isRequired,
   setIsBannedCount: PropTypes.func.isRequired,
-  isBannedCount: PropTypes.number.isRequired,
 }
 
 export default CivilizationsList

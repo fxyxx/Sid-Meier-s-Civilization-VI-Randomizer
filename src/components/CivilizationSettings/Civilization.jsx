@@ -11,7 +11,6 @@ const Civilization = ({
   civilizationWiki,
   setIsBannedCount,
   isBanned,
-  isBannedCount,
 }) => {
   const [banStatus, setBanStatus] = useState('ban')
 
@@ -32,7 +31,7 @@ const Civilization = ({
     >
       <div className={styles.banArea}>
         <button
-          disabled={!leadersLeft || isBannedCount > 47}
+          disabled={!leadersLeft && banStatus === 'ban'}
           className={styles.banBtn}
           onClick={(e) => {
             setIsBannedCount(e), setIsBannedStatus(e)
@@ -76,7 +75,6 @@ Civilization.propTypes = {
   civilizationWiki: PropTypes.string.isRequired,
   isBanned: PropTypes.bool.isRequired,
   setIsBannedCount: PropTypes.func.isRequired,
-  isBannedCount: PropTypes.number.isRequired,
 }
 
 export default Civilization
