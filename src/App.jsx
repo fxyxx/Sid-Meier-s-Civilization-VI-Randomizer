@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react'
 import { bannedCounter, generateRandomIndexArray } from './utils/calculations'
 import DraftedGame from './components/DraftedGame/DraftedGame'
 
-//todo добавить обновленные цивилизации
+//todo добавить filter/sort
 
 function App() {
   const [players, setPlayers] = useState('')

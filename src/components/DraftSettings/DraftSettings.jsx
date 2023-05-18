@@ -17,7 +17,7 @@ const DraftSettings = ({
   setLeadersLeft,
 }) => {
   const [isSecondSelectEnabled, setIsSecondSelectEnabled] = useState(false)
-  const playersOptions = civilizationsDATA.length - isBannedCount
+  const playersOptions = (civilizationsDATA.length - isBannedCount) / +leaders
   const leadersOptions = (civilizationsDATA.length - isBannedCount) / +players
 
   const handleFirstSelectChange = (value) => {
