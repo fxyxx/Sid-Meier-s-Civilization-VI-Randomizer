@@ -71,7 +71,7 @@ export const civilizationsDATA = [
   },
   {
     civilizationName: 'Arabian',
-    leaderName: 'Saladin (Vizier)',
+    leaderName: 'Saladin (Sultan)',
     isBanned: false,
     civilizationImg: '002-1',
     leaderImg: 'Saladin_29_29',

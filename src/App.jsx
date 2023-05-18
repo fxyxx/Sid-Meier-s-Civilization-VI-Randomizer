@@ -8,6 +8,7 @@ import { bannedCounter, generateRandomIndexArray } from './utils/calculations'
 import DraftedGame from './components/DraftedGame/DraftedGame'
 
 //todo добавить filter/sort
+// исправить копирование
 
 function App() {
   const [players, setPlayers] = useState('')
