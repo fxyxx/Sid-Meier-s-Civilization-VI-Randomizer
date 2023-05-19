@@ -7,8 +7,7 @@ import { useEffect, useState } from 'react'
 import { bannedCounter, generateRandomIndexArray } from './utils/calculations'
 import DraftedGame from './components/DraftedGame/DraftedGame'
 import MyToUpButton from './components/UI/buttons/MyScrollToTopButton'
-
-//todo pre loader
+import Loader from './components/Loader/Loader'
 
 function App() {
   const [players, setPlayers] = useState('')
@@ -18,6 +17,29 @@ function App() {
   const [allowedToDraftDATA, setAllowedToDraftDATA] = useState([])
   const [generateBtnStatus, setGenerateBtnStatus] = useState('Draft your game')
   const [randomIndexes, setRandomIndexes] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
+  const [isLoadingStyles, setIsLoadingStyles] = useState(true)
+
+  useEffect(() => {
+    const handleLoad = () => {
+      setIsLoadingStyles(false)
+
+      setTimeout(() => {
+        setIsLoading(false)
+        document.body.style.overflow = 'auto'
+      }, 1000)
+    }
+    if (isLoading) {
+      document.body.style.overflow = 'hidden'
+    }
+
+    window.addEventListener('load', handleLoad)
+
+    return () => {
+      window.removeEventListener('load', handleLoad)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   useEffect(() => {
     setAllowedToDraftDATA([])
@@ -81,34 +103,37 @@ function App() {
 
   return (
     <div>
-      <Navbar />
-      <DraftSettings
-        players={players}
-        setPlayers={setPlayers}
-        leaders={leaders}
-        setLeaders={setLeaders}
-        leadersLeft={leadersLeft}
-        setLeadersLeft={setLeadersLeft}
-        civilizationsDATA={civilizationsDATA}
-        isBannedCount={isBannedCount}
-      />
-      <CivilizationSettings
-        players={players}
-        leaders={leaders}
-        leadersLeft={leadersLeft}
-        civilizationsDATA={civilizationsDATA}
-        setIsBannedCount={changeIsBanned}
-        generateGame={generateGame}
-        generateBtnStatus={generateBtnStatus}
-      />
-      {!!allowedToDraftDATA.length && (
-        <DraftedGame
+      {isLoading ? <Loader isLoadingStyles={isLoadingStyles} /> : <></>}
+      <>
+        <Navbar />
+        <DraftSettings
+          players={players}
+          setPlayers={setPlayers}
           leaders={leaders}
-          allowedToDraftDATA={allowedToDraftDATA}
-          randomIndexes={randomIndexes}
+          setLeaders={setLeaders}
+          leadersLeft={leadersLeft}
+          setLeadersLeft={setLeadersLeft}
+          civilizationsDATA={civilizationsDATA}
+          isBannedCount={isBannedCount}
         />
-      )}
-      <MyToUpButton />
+        <CivilizationSettings
+          players={players}
+          leaders={leaders}
+          leadersLeft={leadersLeft}
+          civilizationsDATA={civilizationsDATA}
+          setIsBannedCount={changeIsBanned}
+          generateGame={generateGame}
+          generateBtnStatus={generateBtnStatus}
+        />
+        {!!allowedToDraftDATA.length && (
+          <DraftedGame
+            leaders={leaders}
+            allowedToDraftDATA={allowedToDraftDATA}
+            randomIndexes={randomIndexes}
+          />
+        )}
+        <MyToUpButton />
+      </>
     </div>
   )
 }

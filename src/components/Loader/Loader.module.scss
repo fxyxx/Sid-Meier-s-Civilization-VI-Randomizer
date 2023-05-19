@@ -1,0 +1,17 @@
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(30px);
+  background: #0e3251ee;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  opacity: 0;
+  z-index: 3;
+  transition: opacity 1s ease-in-out;
+}
+
+.show {
+  opacity: 1;
+}
