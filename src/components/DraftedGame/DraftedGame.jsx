@@ -7,9 +7,9 @@ import { useState } from 'react'
 import MyModal from '../UI/modal/MyModal'
 import { clipboardTemplate } from '../../utils/clipboardTemplate'
 
-const DraftedGame = ({ leaders, filteredDATA, randomIndexes }) => {
+const DraftedGame = ({ leaders, allowedToDraftDATA, randomIndexes }) => {
   const [copied, setCopied] = useState(false)
-  const layoutArray = randomIndexes.map((index) => filteredDATA[index])
+  const layoutArray = randomIndexes.map((index) => allowedToDraftDATA[index])
   const template = clipboardTemplate(layoutArray, leaders)
 
   const handleCopy = () => {
@@ -33,7 +33,7 @@ const DraftedGame = ({ leaders, filteredDATA, randomIndexes }) => {
 
 DraftedGame.propTypes = {
   leaders: PropTypes.string.isRequired,
-  filteredDATA: PropTypes.array.isRequired,
+  allowedToDraftDATA: PropTypes.array.isRequired,
   randomIndexes: PropTypes.array.isRequired,
 }
 

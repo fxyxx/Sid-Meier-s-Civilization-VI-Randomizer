@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react'
 import { bannedCounter, generateRandomIndexArray } from './utils/calculations'
 import DraftedGame from './components/DraftedGame/DraftedGame'
 
-//todo добавить filter/sort
+//todo pre loader
 // исправить копирование
 
 function App() {
@@ -15,22 +15,22 @@ function App() {
   const [leaders, setLeaders] = useState('')
   const [leadersLeft, setLeadersLeft] = useState(civilizationsDATA.length)
   const [isBannedCount, setIsBannedCount] = useState(0)
-  const [filteredDATA, setFilteredDATA] = useState([])
+  const [allowedToDraftDATA, setAllowedToDraftDATA] = useState([])
   const [generateBtnStatus, setGenerateBtnStatus] = useState('Draft your game')
   const [randomIndexes, setRandomIndexes] = useState([])
 
   useEffect(() => {
-    setFilteredDATA([])
+    setAllowedToDraftDATA([])
     setGenerateBtnStatus('Draft your game')
   }, [players, leaders, isBannedCount])
 
   useEffect(() => {
-    const range = filteredDATA.length - 1
+    const range = allowedToDraftDATA.length - 1
     const amount = +leaders * +players
     if (range > 0) {
       setRandomIndexes(generateRandomIndexArray(range, amount))
     }
-  }, [filteredDATA, leaders, players])
+  }, [allowedToDraftDATA, leaders, players])
 
   const changeIsBanned = (e) => {
     const bannedLeader = e.target.closest(`[data-isbanned]`)
@@ -52,20 +52,26 @@ function App() {
   }
 
   const generateGame = () => {
-    if (!filteredDATA.length) {
+    if (!allowedToDraftDATA.length) {
       for (const item of civilizationsDATA) {
         if (item.isBanned === false) {
-          setFilteredDATA((filteredDATA) => [...filteredDATA, item])
+          setAllowedToDraftDATA((allowedToDraftDATA) => [
+            ...allowedToDraftDATA,
+            item,
+          ])
         }
       }
 
       setGenerateBtnStatus('regenerate')
     } else {
-      setFilteredDATA([])
+      setAllowedToDraftDATA([])
 
       for (const item of civilizationsDATA) {
         if (item.isBanned === false) {
-          setFilteredDATA((filteredDATA) => [...filteredDATA, item])
+          setAllowedToDraftDATA((allowedToDraftDATA) => [
+            ...allowedToDraftDATA,
+            item,
+          ])
         }
       }
 
@@ -95,10 +101,10 @@ function App() {
         generateGame={generateGame}
         generateBtnStatus={generateBtnStatus}
       />
-      {filteredDATA.length && (
+      {!!allowedToDraftDATA.length && (
         <DraftedGame
           leaders={leaders}
-          filteredDATA={filteredDATA}
+          allowedToDraftDATA={allowedToDraftDATA}
           randomIndexes={randomIndexes}
         />
       )}
