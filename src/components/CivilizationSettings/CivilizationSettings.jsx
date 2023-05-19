@@ -47,7 +47,21 @@ const CivilizationSettings = ({
           setIsBannedCount={setIsBannedCount}
         />
       ) : (
-        <h1>Not found</h1>
+        <h2
+          style={{
+            fontFamily: 'var(--font-family)',
+            fontSize: 26,
+            fontWeight: 700,
+            marginRight: 10,
+            backgroundColor: 'var(--color-dark-blue)',
+            padding: 15,
+            margin: 20,
+            borderRadius: 20,
+            color: 'var(--color-white)',
+          }}
+        >
+          Not found
+        </h2>
       )}
       <MyActionButton
         disabled={!players || !leaders ? true : leadersLeft < 0 ? true : false}

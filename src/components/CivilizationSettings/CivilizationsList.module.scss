@@ -6,3 +6,18 @@
   gap: 5px;
   margin-top: 10px;
 }
+
+.civilization-enter {
+  opacity: 0;
+}
+.civilization-enter-active {
+  opacity: 1;
+  transition: opacity 1100ms ease-in;
+}
+.civilization-exit {
+  opacity: 1;
+}
+.civilization-exit-active {
+  opacity: 0;
+  transition: opacity 1100ms ease-in;
+}

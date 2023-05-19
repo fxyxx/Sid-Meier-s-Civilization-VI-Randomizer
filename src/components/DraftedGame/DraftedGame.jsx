@@ -9,6 +9,7 @@ import { clipboardTemplate } from '../../utils/clipboardTemplate'
 
 const DraftedGame = ({ leaders, allowedToDraftDATA, randomIndexes }) => {
   const [copied, setCopied] = useState(false)
+
   const layoutArray = randomIndexes.map((index) => allowedToDraftDATA[index])
   const template = clipboardTemplate(layoutArray, leaders)
 
