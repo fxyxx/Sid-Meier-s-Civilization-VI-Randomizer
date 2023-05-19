@@ -25,7 +25,9 @@ const DraftedGame = ({ leaders, allowedToDraftDATA, randomIndexes }) => {
       <CopyToClipboard text={template} onCopy={handleCopy}>
         <MyActionButton>copy to clipboard</MyActionButton>
       </CopyToClipboard>
-      {copied && <MyModal>civilizations have been copied</MyModal>}
+      {copied && (
+        <MyModal copied={copied}>civilizations have been copied</MyModal>
+      )}
 
       <DraftedGameList leaders={leaders} layoutArray={layoutArray} />
     </div>

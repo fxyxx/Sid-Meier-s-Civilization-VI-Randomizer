@@ -1,9 +1,9 @@
 import styles from './MyModal.module.scss'
 import PropTypes from 'prop-types'
 
-const MyModal = ({ children, ...props }) => {
+const MyModal = ({ children, copied }) => {
   return (
-    <div {...props} className={styles.myModal}>
+    <div className={`${styles.myModal} ${copied ? styles.show : ''}`}>
       {children}
     </div>
   )
@@ -11,6 +11,7 @@ const MyModal = ({ children, ...props }) => {
 
 MyModal.propTypes = {
   children: PropTypes.string.isRequired,
+  copied: PropTypes.bool.isRequired,
 }
 
 export default MyModal

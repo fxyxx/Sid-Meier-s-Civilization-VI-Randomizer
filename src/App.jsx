@@ -6,9 +6,9 @@ import { civilizationsDATA } from './data/data'
 import { useEffect, useState } from 'react'
 import { bannedCounter, generateRandomIndexArray } from './utils/calculations'
 import DraftedGame from './components/DraftedGame/DraftedGame'
+import MyToUpButton from './components/UI/buttons/MyScrollToTopButton'
 
 //todo pre loader
-// исправить копирование
 
 function App() {
   const [players, setPlayers] = useState('')
@@ -108,6 +108,7 @@ function App() {
           randomIndexes={randomIndexes}
         />
       )}
+      <MyToUpButton />
     </div>
   )
 }
