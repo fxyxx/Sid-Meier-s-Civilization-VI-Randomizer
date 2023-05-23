@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import styles from './Civilization.module.scss'
 import PropTypes from 'prop-types'
 
@@ -12,32 +11,21 @@ const Civilization = ({
   setIsBannedCount,
   isBanned,
 }) => {
-  const [banStatus, setBanStatus] = useState('ban')
-
-  const setIsBannedStatus = (e) => {
-    const bannedLeader = e.target.closest(`[data-isbanned]`)
-    if (bannedLeader.dataset.isbanned === 'false') {
-      setBanStatus('ban')
-    } else {
-      setBanStatus('unban')
-    }
-  }
-
   return (
     <div
-      className={banStatus === 'ban' ? styles.civilization : styles.banned}
+      className={!isBanned ? styles.civilization : styles.banned}
       data-isbanned={isBanned}
       data-name={leaderName}
     >
       <div className={styles.banArea}>
         <button
-          disabled={!leadersLeft && banStatus === 'ban'}
+          disabled={!leadersLeft && !isBanned}
           className={styles.banBtn}
           onClick={(e) => {
-            setIsBannedCount(e), setIsBannedStatus(e)
+            setIsBannedCount(e)
           }}
         >
-          {banStatus}
+          {!isBanned ? 'ban' : 'unban'}
         </button>
         <div className={styles.civilizationStyles}>
           <img
