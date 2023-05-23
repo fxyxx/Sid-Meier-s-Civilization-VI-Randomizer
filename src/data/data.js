@@ -43,7 +43,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '001-2',
     leaderImg: 'Abraham_Lincoln_29',
-    civilizationWiki: 'Abraham_Lincoln_',
+    civilizationWiki: 'Abraham_Lincoln_(Civ6)',
   },
   {
     civilizationName: 'American',
@@ -67,7 +67,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '002',
     leaderImg: 'Saladin_29',
-    civilizationWiki: 'Saladin_',
+    civilizationWiki: 'Saladin_(Civ6)',
   },
   {
     civilizationName: 'Arabian',
@@ -83,7 +83,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '003',
     leaderImg: 'John_Curtin_29',
-    civilizationWiki: 'John_Curtin_',
+    civilizationWiki: 'John_Curtin_(Civ6)',
   },
   {
     civilizationName: 'Aztec',
@@ -91,7 +91,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '004',
     leaderImg: 'Montezuma_29',
-    civilizationWiki: 'Montezuma_',
+    civilizationWiki: 'Montezuma_(Civ6)',
   },
   {
     civilizationName: 'Babylonian',
@@ -99,7 +99,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '048',
     leaderImg: 'Hammurabi_29',
-    civilizationWiki: 'Hammurabi_',
+    civilizationWiki: 'Hammurabi_(Civ6)',
   },
   {
     civilizationName: 'Brazilian',
@@ -107,7 +107,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '005',
     leaderImg: 'Pedro_II_29',
-    civilizationWiki: 'Pedro_II_',
+    civilizationWiki: 'Pedro_II_(Civ6)',
   },
   {
     civilizationName: 'Byzantine',
@@ -115,7 +115,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '006',
     leaderImg: 'Basil_II_29',
-    civilizationWiki: 'Basil_II_',
+    civilizationWiki: 'Basil_II_(Civ6)',
   },
   {
     civilizationName: 'Byzantine',
@@ -123,7 +123,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '006-1',
     leaderImg: 'Theodora_29',
-    civilizationWiki: 'Theodora_',
+    civilizationWiki: 'Theodora_(Civ6)',
   },
   {
     civilizationName: 'Canadian',
@@ -131,7 +131,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '007',
     leaderImg: 'Wilfrid_Laurier_29',
-    civilizationWiki: 'Wilfrid_Laurier_',
+    civilizationWiki: 'Wilfrid_Laurier_(Civ6)',
   },
   {
     civilizationName: 'Chinese',
@@ -139,7 +139,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '008',
     leaderImg: 'Qin_Shi_Huang_29',
-    civilizationWiki: 'Qin_Shi_Huang_',
+    civilizationWiki: 'Qin_Shi_Huang_(Civ6)',
   },
   {
     civilizationName: 'Chinese',
@@ -147,7 +147,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '008-0',
     leaderImg: 'Qin_Shi_Huang_29_29',
-    civilizationWiki: 'Qin_Shi_Huang_',
+    civilizationWiki: 'Qin_Shi_Huang_(Civ6)/Unifier',
   },
   {
     civilizationName: 'Chinese',
@@ -155,7 +155,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '008-1',
     leaderImg: 'Kublai_Khan_29_29',
-    civilizationWiki: 'Kublai_Khan_',
+    civilizationWiki: 'Kublai_Khan_(Civ6)',
   },
   {
     civilizationName: 'Chinese',
@@ -163,7 +163,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '008-2',
     leaderImg: 'Yongle_29',
-    civilizationWiki: 'Yongle_',
+    civilizationWiki: 'Yongle_(Civ6)',
   },
   {
     civilizationName: 'Chinese',
@@ -171,7 +171,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '008-3',
     leaderImg: 'Wu_Zetian_29',
-    civilizationWiki: 'Wu_Zetian_',
+    civilizationWiki: 'Wu_Zetian_(Civ6)',
   },
   {
     civilizationName: 'Cree',
@@ -179,7 +179,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '009',
     leaderImg: 'Poundmaker_29',
-    civilizationWiki: 'Poundmaker_',
+    civilizationWiki: 'Poundmaker_(Civ6)',
   },
   {
     civilizationName: 'Dutch',
@@ -187,7 +187,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '010',
     leaderImg: 'Wilhelmina_29',
-    civilizationWiki: 'Wilhelmina_',
+    civilizationWiki: 'Wilhelmina_(Civ6)',
   },
   {
     civilizationName: 'Egyptian',
@@ -195,7 +195,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '011',
     leaderImg: 'Cleopatra_29',
-    civilizationWiki: 'Cleopatra_',
+    civilizationWiki: 'Cleopatra_(Civ6)',
   },
   {
     civilizationName: 'Egyptian',
@@ -203,7 +203,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '011-1',
     leaderImg: 'Cleopatra_29_29',
-    civilizationWiki: 'Cleopatra_',
+    civilizationWiki: 'Cleopatra_(Civ6)/Ptolemaic',
   },
   {
     civilizationName: 'Egyptian',
@@ -211,7 +211,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '011-2',
     leaderImg: 'Ramses_II_29',
-    civilizationWiki: 'Ramses_II_',
+    civilizationWiki: 'Ramses_II_(Civ6)',
   },
   {
     civilizationName: 'English',
@@ -219,7 +219,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '012',
     leaderImg: 'Victoria_29',
-    civilizationWiki: 'Victoria_',
+    civilizationWiki: 'Victoria_(Civ6)',
   },
   {
     civilizationName: 'English',
@@ -227,7 +227,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '012-1',
     leaderImg: 'Victoria_29_29',
-    civilizationWiki: 'Victoria_',
+    civilizationWiki: 'Victoria_(Civ6)/Age_of_Steam',
   },
   {
     civilizationName: 'English',
@@ -235,7 +235,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '012-2',
     leaderImg: 'Eleanor_of_Aquitaine_29_29',
-    civilizationWiki: 'Eleanor_of_Aquitaine_',
+    civilizationWiki: 'Eleanor_of_Aquitaine_(Civ6)',
   },
   {
     civilizationName: 'English',
@@ -243,7 +243,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '012-3',
     leaderImg: 'Elizabeth_I_29',
-    civilizationWiki: 'Elizabeth_I_',
+    civilizationWiki: 'Elizabeth_I_(Civ6)',
   },
   {
     civilizationName: 'Ethiopian',
@@ -251,7 +251,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '013',
     leaderImg: 'Menelik_II_29',
-    civilizationWiki: 'Menelik_II_',
+    civilizationWiki: 'Menelik_II_(Civ6)',
   },
   {
     civilizationName: 'French',
@@ -259,7 +259,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '014',
     leaderImg: 'Catherine_de_Medici_29',
-    civilizationWiki: 'Catherine_de_Medici_',
+    civilizationWiki: 'Catherine_de_Medici_(Civ6)',
   },
   {
     civilizationName: 'French',
@@ -267,7 +267,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '014',
     leaderImg: 'Catherine_de_Medici_29_29',
-    civilizationWiki: 'Catherine_de_Medici_',
+    civilizationWiki: 'Catherine_de_Medici_(Civ6)/Magnificence',
   },
   {
     civilizationName: 'French',
@@ -275,7 +275,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '014',
     leaderImg: 'Eleanor_of_Aquitaine_29_29-2',
-    civilizationWiki: 'Eleanor_of_Aquitaine_',
+    civilizationWiki: 'Eleanor_of_Aquitaine_(Civ6)',
   },
   {
     civilizationName: 'Gallic',
@@ -283,7 +283,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '015',
     leaderImg: 'Ambiorix_29',
-    civilizationWiki: 'Ambiorix_',
+    civilizationWiki: 'Ambiorix_(Civ6)',
   },
   {
     civilizationName: 'Georgian',
@@ -291,7 +291,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '016',
     leaderImg: 'Tamar_29',
-    civilizationWiki: 'Tamar_',
+    civilizationWiki: 'Tamar_(Civ6',
   },
   {
     civilizationName: 'German',
@@ -299,7 +299,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '017',
     leaderImg: 'Frederick_Barbarossa_29',
-    civilizationWiki: 'Frederick_Barbarossa_',
+    civilizationWiki: 'Frederick_Barbarossa_(Civ6)',
   },
   {
     civilizationName: 'German',
@@ -307,7 +307,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '017-1',
     leaderImg: 'Ludwig_II_29',
-    civilizationWiki: 'Ludwig_II_',
+    civilizationWiki: 'Ludwig_II_(Civ6)',
   },
   {
     civilizationName: 'Gran Colombian',
@@ -315,7 +315,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '018',
     leaderImg: 'Sim3Fvar_29',
-    civilizationWiki: 'Sim%C3%B3n_Bol%C3%ADvar_',
+    civilizationWiki: 'Simón_Bolívar_(Civ6)',
   },
   {
     civilizationName: 'Greek',
@@ -323,7 +323,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '019',
     leaderImg: 'Gorgo_29',
-    civilizationWiki: 'Gorgo_',
+    civilizationWiki: 'Gorgo_(Civ6)',
   },
   {
     civilizationName: 'Greek',
@@ -331,7 +331,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '019',
     leaderImg: 'Pericles_29',
-    civilizationWiki: 'Pericles_',
+    civilizationWiki: 'Pericles_(Civ6)',
   },
   {
     civilizationName: 'Hungarian',
@@ -339,7 +339,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '020',
     leaderImg: 'Matthias_Corvinus_29',
-    civilizationWiki: 'Matthias_Corvinus_',
+    civilizationWiki: 'Matthias_Corvinus_(Civ6)',
   },
   {
     civilizationName: 'Incan',
@@ -347,7 +347,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '021',
     leaderImg: 'Pachacuti_29',
-    civilizationWiki: 'Pachacuti_',
+    civilizationWiki: 'Pachacuti_(Civ6)',
   },
   {
     civilizationName: 'Indian',
@@ -355,7 +355,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '022',
     leaderImg: 'Chandragupta_29',
-    civilizationWiki: 'Chandragupta_',
+    civilizationWiki: 'Chandragupta_(Civ6)',
   },
   {
     civilizationName: 'Indian',
@@ -363,7 +363,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '022',
     leaderImg: 'Gandhi_29',
-    civilizationWiki: 'Gandhi_',
+    civilizationWiki: 'Gandhi_(Civ6)',
   },
   {
     civilizationName: 'Indonesian',
@@ -371,7 +371,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '023',
     leaderImg: 'Gitarja_29',
-    civilizationWiki: 'Gitarja_',
+    civilizationWiki: 'Gitarja_(Civ6)',
   },
   {
     civilizationName: 'Japanese',
@@ -379,7 +379,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '024',
     leaderImg: 'Hojo_Tokimune_29',
-    civilizationWiki: 'Hojo_Tokimune_',
+    civilizationWiki: 'Hojo_Tokimune_(Civ6)',
   },
   {
     civilizationName: 'Japanese',
@@ -387,7 +387,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '024-1',
     leaderImg: 'Tokugawa_29',
-    civilizationWiki: 'Tokugawa_',
+    civilizationWiki: 'Tokugawa_(Civ6)',
   },
   {
     civilizationName: 'Khmer',
@@ -395,7 +395,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '025',
     leaderImg: 'Jayavarman_VII_29',
-    civilizationWiki: 'Jayavarman_VII_',
+    civilizationWiki: 'Jayavarman_VII_(Civ6)',
   },
   {
     civilizationName: 'Kongolese',
@@ -403,7 +403,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '026',
     leaderImg: 'Mvemba_a_Nzinga_29',
-    civilizationWiki: 'Mvemba_a_Nzinga_',
+    civilizationWiki: 'Mvemba_a_Nzinga_(Civ6)',
   },
   {
     civilizationName: 'Kongolese',
@@ -411,7 +411,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '026-1',
     leaderImg: 'Nzinga_Mbande_29',
-    civilizationWiki: 'Nzinga_Mbande_',
+    civilizationWiki: 'Nzinga_Mbande_(Civ6)',
   },
   {
     civilizationName: 'Korean',
@@ -419,7 +419,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '027',
     leaderImg: 'Seondeok_29',
-    civilizationWiki: 'Seondeok_',
+    civilizationWiki: 'Seondeok_(Civ6)',
   },
   {
     civilizationName: 'Korean',
@@ -427,7 +427,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '027-1',
     leaderImg: 'Sejong_29',
-    civilizationWiki: 'Sejong_',
+    civilizationWiki: 'Sejong_(Civ6)',
   },
   {
     civilizationName: 'Macedonian',
@@ -435,7 +435,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '028',
     leaderImg: 'Alexander_29',
-    civilizationWiki: 'Alexander_',
+    civilizationWiki: 'Alexander_(Civ6)',
   },
   {
     civilizationName: 'Malian',
@@ -443,7 +443,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '029',
     leaderImg: 'Mansa_Musa_29',
-    civilizationWiki: 'Mansa_Musa_',
+    civilizationWiki: 'Mansa_Musa_(Civ6)',
   },
   {
     civilizationName: 'Malian',
@@ -451,7 +451,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '029-1',
     leaderImg: 'Sundiata_Keita_29',
-    civilizationWiki: 'Sundiata_Keita_',
+    civilizationWiki: 'Sundiata_Keita_(Civ6)',
   },
   {
     civilizationName: 'Māori',
@@ -459,7 +459,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '030',
     leaderImg: 'Kupe_29',
-    civilizationWiki: 'Kupe_',
+    civilizationWiki: 'Kupe_(Civ6)',
   },
   {
     civilizationName: 'Mapuche',
@@ -467,7 +467,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '031',
     leaderImg: 'Lautaro_29',
-    civilizationWiki: 'Lautaro_',
+    civilizationWiki: 'Lautaro_(Civ6)',
   },
   {
     civilizationName: 'Mayan',
@@ -475,7 +475,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '032',
     leaderImg: 'Lady_Six_Sky_29',
-    civilizationWiki: 'Lady_Six_Sky_',
+    civilizationWiki: 'Lady_Six_Sky_(Civ6)',
   },
   {
     civilizationName: 'Mongolian',
@@ -483,7 +483,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '033',
     leaderImg: 'Genghis_Khan_29',
-    civilizationWiki: 'Genghis_Khan_',
+    civilizationWiki: 'Genghis_Khan_(Civ6)',
   },
   {
     civilizationName: 'Mongolian',
@@ -491,7 +491,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '033-1',
     leaderImg: 'Kublai_Khan_29_29-2',
-    civilizationWiki: 'Kublai_Khan_',
+    civilizationWiki: 'Kublai_Khan_(Civ6)',
   },
   {
     civilizationName: 'Norwegian',
@@ -499,7 +499,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '034',
     leaderImg: 'Harald_Hardrada_29',
-    civilizationWiki: 'Harald_Hardrada_',
+    civilizationWiki: 'Harald_Hardrada_(Civ6)',
   },
   {
     civilizationName: 'Norwegian',
@@ -507,7 +507,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '034-1',
     leaderImg: 'Harald_Hardrada_29_29',
-    civilizationWiki: 'Harald_Hardrada_',
+    civilizationWiki: 'Harald_Hardrada_(Civ6)/Varangian',
   },
   {
     civilizationName: 'Nubian',
@@ -515,7 +515,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '035',
     leaderImg: 'Amanitore_29',
-    civilizationWiki: 'Amanitore_',
+    civilizationWiki: 'Amanitore_(Civ6)',
   },
   {
     civilizationName: 'Ottoman',
@@ -523,7 +523,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '036',
     leaderImg: 'Suleiman_29',
-    civilizationWiki: 'Suleiman_',
+    civilizationWiki: 'Suleiman_(Civ6)',
   },
   {
     civilizationName: 'Ottoman',
@@ -531,7 +531,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '036-1',
     leaderImg: 'Suleiman_29_29',
-    civilizationWiki: 'Suleiman_',
+    civilizationWiki: 'Suleiman_(Civ6)/Muhteşem',
   },
   {
     civilizationName: 'Persian',
@@ -539,7 +539,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '037',
     leaderImg: 'Cyrus_29',
-    civilizationWiki: 'Cyrus_',
+    civilizationWiki: 'Cyrus_(Civ6)',
   },
   {
     civilizationName: 'Persian',
@@ -547,7 +547,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '037-1',
     leaderImg: 'Nader_Shah_29',
-    civilizationWiki: 'Nader_Shah_',
+    civilizationWiki: 'Nader_Shah_(Civ6)',
   },
   {
     civilizationName: 'Phoenician',
@@ -555,7 +555,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '038',
     leaderImg: 'Dido_29',
-    civilizationWiki: 'Dido_',
+    civilizationWiki: 'Dido_(Civ6)',
   },
   {
     civilizationName: 'Polish',
@@ -563,7 +563,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '039',
     leaderImg: 'Jadwiga_29',
-    civilizationWiki: 'Jadwiga_',
+    civilizationWiki: 'Jadwiga_(Civ6)',
   },
   {
     civilizationName: 'Portuguese',
@@ -571,7 +571,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: 'Portuguese',
     leaderImg: 'Joao_III',
-    civilizationWiki: 'Jo%C3%A3o_III_',
+    civilizationWiki: 'João_III_(Civ6)',
   },
   {
     civilizationName: 'Roman',
@@ -579,7 +579,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '040-1',
     leaderImg: 'Julius_Caesar_29',
-    civilizationWiki: 'Julius_Caesar_',
+    civilizationWiki: 'Julius_Caesar_(Civ6',
   },
   {
     civilizationName: 'Roman',
@@ -587,7 +587,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '040',
     leaderImg: 'Trajan_29',
-    civilizationWiki: 'Trajan_',
+    civilizationWiki: 'Trajan_(Civ6)',
   },
   {
     civilizationName: 'Russian',
@@ -595,7 +595,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '041',
     leaderImg: 'Peter_29',
-    civilizationWiki: 'Peter_',
+    civilizationWiki: 'Peter_(Civ6)',
   },
   {
     civilizationName: 'Scottish',
@@ -603,7 +603,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '042',
     leaderImg: 'Robert_the_Bruce_29',
-    civilizationWiki: 'Robert_the_Bruce_',
+    civilizationWiki: 'Robert_the_Bruce_(Civ6)',
   },
   {
     civilizationName: 'Scythian',
@@ -611,7 +611,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '043',
     leaderImg: 'Tomyris_29',
-    civilizationWiki: 'Tomyris_',
+    civilizationWiki: 'Tomyris_(Civ6)',
   },
   {
     civilizationName: 'Spanish',
@@ -619,7 +619,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '044',
     leaderImg: 'Philip_II_29',
-    civilizationWiki: 'Philip_II_',
+    civilizationWiki: 'Philip_II_(Civ6)',
   },
   {
     civilizationName: 'Sumerian',
@@ -627,7 +627,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '045',
     leaderImg: 'Gilgamesh_29',
-    civilizationWiki: 'Gilgamesh_',
+    civilizationWiki: 'Gilgamesh_(Civ6)',
   },
   {
     civilizationName: 'Swedish',
@@ -635,7 +635,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '046',
     leaderImg: 'Kristina_29',
-    civilizationWiki: 'Kristina_',
+    civilizationWiki: 'Kristina_(Civ6)',
   },
   {
     civilizationName: 'Vietnamese',
@@ -643,7 +643,7 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: 'Vietnamese_29',
     leaderImg: 'B3Fu_29',
-    civilizationWiki: 'B%C3%A0_Tri%E1%BB%87u_',
+    civilizationWiki: 'Bà_Triệu_(Civ6)',
   },
   {
     civilizationName: 'Zulu',
@@ -651,6 +651,6 @@ export const civilizationsDATA = [
     isBanned: false,
     civilizationImg: '047',
     leaderImg: 'Shaka_29',
-    civilizationWiki: 'Shaka_',
+    civilizationWiki: 'Shaka_(Civ6)',
   },
 ]

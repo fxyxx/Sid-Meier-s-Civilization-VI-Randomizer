@@ -21,7 +21,7 @@ const DraftedGamePlayer = ({
         className={styles.link}
         target="_blank"
         rel="noopener noreferrer"
-        href={`https://civilization.fandom.com/wiki/${civilizationWiki}(Civ6)`}
+        href={`https://civilization.fandom.com/wiki/${civilizationWiki}`}
       >
         More information
       </a>
