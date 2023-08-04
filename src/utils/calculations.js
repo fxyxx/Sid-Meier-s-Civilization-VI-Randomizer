@@ -5,13 +5,12 @@ export const bannedCounter = (array) => {
       count += 1
     }
   }
+  
   return count
 }
 
 export const generateRandomIndexArray = (range, amount) => {
   const indexes = []
-
-  // генерируем уникальные случайные числа в диапазоне от 0 до range
   while (indexes.length < amount) {
     const randomIndex = Math.floor(Math.random() * (range + 1))
     if (!indexes.includes(randomIndex)) {
